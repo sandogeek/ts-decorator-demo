@@ -31,6 +31,7 @@ export const validate = function (target, propertyKey: string, descriptor: Typed
     const oldMethod = descriptor.value;
     // 重写原来的方法
     descriptor.value = function () {
+      // 使得方法能够接收任意个参数并传递给旧方法执行
       const args = arguments;
       // 看看成员里面有没有存的私有的对象
       if (oldMethod[notEmptyMetadataKey]) {

@@ -15,6 +15,7 @@ export let Path = (path: string): Function => {
     descriptor.value = function () {
       const params = arguments;
       const methodResult = oldMethod.apply(this, params);
+      return methodResult;
       // 输出返回结果
     //   console.log(methodResult);
     //   res.send(methodResult);
